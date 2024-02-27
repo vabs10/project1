@@ -11,6 +11,10 @@ import { Link } from "react-router-dom";
 
 const First = () => {
   return (
+    <div
+              className="d-flex align-items-start justify-content-center"
+              style={{ height: "295px" }}
+            >
     <Container
       className="d-flex align-items-center justify-content-center"
       style={{ minHeight: "100vh" }}
@@ -66,6 +70,8 @@ const First = () => {
               <Form.Label>Notes</Form.Label>
               <Form.Control
                 as="textarea"
+                rows={3}
+                cols={6}
                 placeholder="Enter project name here"
               />
             </Form.Group>
@@ -86,6 +92,7 @@ const First = () => {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 };
 

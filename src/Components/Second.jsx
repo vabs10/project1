@@ -1,16 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Row,
   Col,
   Form,
-  Nav,
   AlertHeading,
   ListGroup,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Time from "../ListGroups/Time";
+import Fixed from "../ListGroups/Fixed";
+import NonBillable from "../ListGroups/NonBillable";
 
 const Second = () => {
+  const [selectedComponent, setSelectedComponent] = useState("tm");
+
+  const handleItemClick = (eventKey) => {
+    // console.log("Clicked:", eventKey); // Debugging statement
+    setSelectedComponent(eventKey);
+  };
+
+  const renderComponent = () => {
+    switch (selectedComponent) {
+      case "tm":
+        return <Time />;
+      case "ff":
+        return <Fixed />;
+      case "nb":
+        return <NonBillable />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <Container
       className="d-flex align-items-center justify-content-center"
@@ -28,27 +50,54 @@ const Second = () => {
           </div>
           <Form>
             <Form.Group className="d-flex align-items-center justify-content-center p-2">
-              <ListGroup horizontal defaultActiveKey="/tm">
-                <ListGroup.Item action href="/tm">
+              <ListGroup horizontal>
+                <ListGroup.Item
+                  action
+                  active={selectedComponent === "tm"}
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    handleItemClick("tm");
+                  }}
+                >
                   Time & Materials
                 </ListGroup.Item>
-                <ListGroup.Item action href="/ff">
+                <ListGroup.Item
+                  action
+                  active={selectedComponent === "ff"}
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    handleItemClick("ff");
+                  }}
+                >
                   Fixed Fee
                 </ListGroup.Item>
-                <ListGroup.Item action href="/nb">
+                <ListGroup.Item
+                  action
+                  active={selectedComponent === "nb"}
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    handleItemClick("nb");
+                  }}
+                >
                   Non-Billable
                 </ListGroup.Item>
               </ListGroup>
             </Form.Group>
-            
-
+            <div
+              className="d-flex align-items-start justify-content-center"
+              style={{ height: "295px", overflowY: "auto" }}
+            >
+              {renderComponent()}
+            </div>{" "}
             <Form.Group className="p-2 d-flex justify-content-between align-items-center">
-              <button type="button" class="btn px-0 text-muted border-0">
+              <button type="button" className="btn px-0 text-muted border-0">
                 <Link to="/">&lt; Back</Link>
               </button>
               <div class="d-flex justify-content-center flex-grow-1">
-                <button class="btn btn-primary d-flex align-items-center justify-content-center ">
-                  Next
+                <button class="btn btn-primary d-flex align-items-center justify-content-center">
+                  <Link to="/3" style={{ color: "white" }}>
+                    Next
+                  </Link>
                 </button>
               </div>
             </Form.Group>
