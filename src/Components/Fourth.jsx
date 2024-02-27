@@ -45,36 +45,62 @@ const Fourth = () => {
                     <span>Everyone</span>
                     <br />
                     <span>
-                      All users can now see it, but guests cannot access the projects.
+                      All users can now see it, but guests cannot access the
+                      projects.
                     </span>
                   </Col>
                 </ListGroup.Item>
 
-                <ListGroup.Item action className="d-flex align-items-center hover-item hover:outline-2 hover:blue-500">
+                <ListGroup.Item
+                  action
+                  className="d-flex align-items-center hover-item hover:outline-2 hover:blue-500"
+                >
                   <Col md={3}>
-                    <PersonCircle style={{ fontSize: "45px", padding: "5px" }} />
+                    <PersonCircle
+                      style={{ fontSize: "45px", padding: "5px" }}
+                    />
                   </Col>
                   <Col md={9}>
                     <span>Only Admin's</span>
                     <br />
-                    <span>Only admins can manage everything.<br/></span><br/>
+                    <span>
+                      Only admins can manage everything.
+                      <br />
+                    </span>
+                    <br />
                   </Col>
                 </ListGroup.Item>
 
-                <ListGroup.Item action className="d-flex align-items-center hover">
+                <ListGroup.Item
+                  action
+                  className="d-flex align-items-center hover"
+                >
                   <Col md={3}>
                     <People style={{ fontSize: "45px", padding: "5px" }} />
                   </Col>
                   <Col md={9}>
                     <span>Only to Specific people</span>
                     <br />
-                    <span>Only some specific people can able to see it.<br/></span>
-                    <br/>
+                    <span>
+                      Only some specific people can able to see it.
+                      <br />
+                    </span>
+                    <br />
                   </Col>
                 </ListGroup.Item>
               </ListGroup>
-
-              {/* ... rest of your component code ... */}
+            </Form.Group>
+            <Form.Group className="p-2 d-flex justify-content-between align-items-center">
+              <button type="button" className="btn px-0 text-muted border-0">
+                <Link to="/3" style={{ color: "gray" }}>
+                  &lt; Back
+                </Link>
+              </button>
+              <div className="d-flex justify-content-center flex-grow-1">
+                <button className="btn btn-primary d-flex align-items-center justify-content-center">
+                  Next
+                </button>
+              </div>
             </Form.Group>
           </Form>
         </Col>

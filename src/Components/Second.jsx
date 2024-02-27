@@ -91,7 +91,7 @@ const Second = () => {
             </div>{" "}
             <Form.Group className="p-2 d-flex justify-content-between align-items-center">
               <button type="button" className="btn px-0 text-muted border-0">
-                <Link to="/">&lt; Back</Link>
+                <Link to="/" style={{ color: "gray" }}>&lt; Back</Link>
               </button>
               <div class="d-flex justify-content-center flex-grow-1">
                 <button class="btn btn-primary d-flex align-items-center justify-content-center">

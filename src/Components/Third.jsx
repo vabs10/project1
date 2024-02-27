@@ -47,7 +47,7 @@ const Third = () => {
 
             <Form.Group className="p-2 d-flex justify-content-between align-items-center">
               <button type="button" className="btn px-0 text-muted border-0">
-                <Link to="/2">&lt; Back</Link>
+                <Link to="/2" style={{ color: "gray" }}>&lt; Back</Link>
               </button>
               <div className="d-flex justify-content-center flex-grow-1">
                 <button className="btn btn-primary d-flex align-items-center justify-content-center">
