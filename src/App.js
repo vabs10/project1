@@ -2,8 +2,6 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import First from "./Components/First";
 import Second from "./Components/Second";
-import Time from "./ListGroups/Time";
-import Fixed from "./ListGroups/Fixed";
 import Third from "./Components/Third";
 import Fourth from "./Components/Fourth";
 
